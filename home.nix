@@ -39,6 +39,7 @@
       ripgrep
       git-crypt
       yt-dlp
+      jq
       alejandra
       man-pages
       linux-manual
