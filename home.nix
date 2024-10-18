@@ -40,6 +40,7 @@
       git-crypt
       yt-dlp
       jq
+      gh
       alejandra
       man-pages
       linux-manual
