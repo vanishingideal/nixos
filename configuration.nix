@@ -151,7 +151,7 @@
     ];
     shellAliases = {
       v = "nvim";
-      re = "sudo nixos-rebuild switch --flake ";
+      rebuild = "cd /etc/nixos && sudo nixos-rebuild switch --flake .#default";
       gc = "sudo nix-collect-garbage -d";
       e = "emacsclient -t";
       cc = "gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -g $1 -o $(echo $1 | cut -d . -f1)";
