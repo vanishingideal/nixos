@@ -8,7 +8,6 @@
   imports = [
     ./modules/prg/tmux.nix
     ./modules/prg/emacs.nix
-    ./modules/prg/fish.nix
     ./modules/prg/nixvim.nix
     ./modules/prg/git.nix
     ./modules/env/gtk.nix

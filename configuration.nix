@@ -38,7 +38,11 @@
 
   documentation = {
     enable = true;
-    man.enable = true;
+    nixos.includeAllModules = true;
+    man = {
+      enable = true;
+      generateCaches = true;
+    };
     dev.enable = true;
   };
 
@@ -47,6 +51,10 @@
     appimage = {
       enable = true;
       binfmt = true;
+    };
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
     };
     fish = {
       enable = true;
@@ -68,10 +76,6 @@
           echo -n "$prompt_char "
          end
       '';
-    };
-    gnupg.agent = {
-      enable = true;
-      enableSSHSupport = true;
     };
   };
 
@@ -141,8 +145,8 @@
 
   users.users.vanishingideal = {
     isNormalUser = true;
-    description = "vanishingideal";
     shell = pkgs.fish;
+    description = "vanishingideal";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
   };
