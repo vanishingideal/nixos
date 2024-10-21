@@ -14,8 +14,9 @@
         emmet-mode
         js2-mode
         prettier
-        smex
-        org-roam
+        citar
+	elfeed
+	org-roam
         vterm
       ];
     enable = true;
