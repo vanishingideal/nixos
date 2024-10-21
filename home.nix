@@ -23,7 +23,7 @@
       tmux
       xclip
       btop
-      jj
+      jujutsu
       feh
       alacritty
       zathura
