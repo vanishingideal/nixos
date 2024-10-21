@@ -11,7 +11,7 @@
     };
 
     font = {
-      name = "Noto Sans 10";
+      name = "Noto Sans 8";
       package = pkgs.noto-fonts;
     };
 
