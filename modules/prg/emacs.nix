@@ -81,7 +81,7 @@
       (use-package lean4-mode
         :commands (lean4-mode))
 
-      (set-frame-font "cascadia code 8" nil t)
+      (set-frame-font "fira code 10" nil t)
 
       (add-hook 'dired-mode-hook 'dired-hide-details-mode)
 
