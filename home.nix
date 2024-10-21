@@ -23,6 +23,7 @@
       tmux
       xclip
       btop
+      jj
       feh
       alacritty
       zathura
