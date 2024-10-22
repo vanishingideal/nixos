@@ -59,9 +59,9 @@
     fish = {
       enable = true;
       interactiveShellInit = ''
-        set -gx --path fish_function_path "/etc/nixos/modules/prg/fish" $fish_function_path
-	source "/etc/nixos/modules/prg/fish/prompt.fish"
-	theme_gruvbox dark
+               set -gx --path fish_function_path "/etc/nixos/modules/prg/fish" $fish_function_path
+        source "/etc/nixos/modules/prg/fish/prompt.fish"
+        theme_gruvbox dark
       '';
     };
   };

@@ -10,13 +10,13 @@
         use-package
         evil
         lsp-mode
-        flexoki-themes
+        gruvbox-theme
         emmet-mode
         js2-mode
         prettier
         citar
-	elfeed
-	org-roam
+        elfeed
+        org-roam
         vterm
       ];
     enable = true;
@@ -71,13 +71,13 @@
         :hook ((python-mode typescript-mode c-mode) . lsp-deferred)
         :commands (lsp lsp-deferred))
 
-      (use-package flexoki-themes
+      (use-package gruvbox-theme
         :config
-        (load-theme 'flexoki-themes-dark t)
+        (load-theme 'gruvbox-dark-hard t)
         :custom
-        (flexoki-themes-use-bold-keywords t)
-        (flexoki-themes-use-bold-builtins t)
-        (flexoki-themes-use-italic-comments t))
+        (gruvbox-theme-use-bold-keywords t)
+        (gruvbox-theme-use-bold-builtins t)
+        (gruvbox-theme-use-italic-comments t))
 
       (use-package lean4-mode
         :commands (lean4-mode))
@@ -94,6 +94,10 @@
             kept-old-versions 2)
       (global-set-key (kbd "M-x") 'smex)
       (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+
+      (defun load-elfeed-feeds-from-file (file)
+      (global-set-key (kbd "C-x w") 'elfeed)
+      (setq elfeed-feeds (load-elfeed-feeds-from-file "~/.emacs.d/feeds.txt")))
     '';
   };
 }
