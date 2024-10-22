@@ -59,9 +59,9 @@
     fish = {
       enable = true;
       interactiveShellInit = ''
-               set -gx --path fish_function_path "/etc/nixos/modules/prg/fish" $fish_function_path
-        source "/etc/nixos/modules/prg/fish/prompt.fish"
-        theme_gruvbox dark
+        set -gx --path fish_function_path "/etc/nixos/modules/prg/fish" $fish_function_path
+	source "/etc/nixos/modules/prg/fish/prompt.fish"
+	theme_gruvbox dark
       '';
     };
   };
@@ -108,8 +108,24 @@
     };
     libinput.enable = true;
     openssh.enable = true;
-  };
 
+    mpd = {
+      enable = true;
+      network.listenAddress = "0.0.0.0";
+      user = "vanishingideal";
+      musicDirectory = "/home/vanishingideal/a";
+      extraConfig = ''
+        log_level "default"
+        auto_update "yes"
+      '';
+
+      startWhenNeeded = true;
+    };
+  };
+  systemd.services.mpd.environment = {
+   # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+   XDG_RUNTIME_DIR = "/run/user/1000"; # User-id 1000 must match above user. MPD will look inside this directory for the PipeWire socket.
+   };
   hardware = {
     pulseaudio.enable = false;
     bluetooth = {

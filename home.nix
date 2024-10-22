@@ -44,14 +44,15 @@
       man-pages
       linux-manual
       man-pages-posix
+      ncmpcpp
     ];
   };
-
   services.xscreensaver = {
     enable = true;
     settings = {
       timeout = 10;
     };
   };
+
   fonts.fontconfig.enable = true;
 }
