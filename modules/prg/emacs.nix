@@ -5,6 +5,7 @@
   ...
 }: {
   programs.emacs = {
+    enable = true;
     extraPackages = epkgs:
       with epkgs; [
         use-package
@@ -17,9 +18,16 @@
         citar
         elfeed
         org-roam
+        emacsql
+        emacsql-sqlite
+        pdf-tools
         vterm
+        nix-mode
+        neotree
+        multiple-cursors
+        company
       ];
-    enable = true;
+
     extraConfig = ''
       (setq gc-cons-threshold 100000000
             use-package-always-ensure t
@@ -32,10 +40,6 @@
       (prefer-coding-system 'utf-8-unix)
       (set-language-environment "utf-8")
       (set-default-coding-systems 'utf-8)
-
-      (require 'org-roam)
-      (setq org-roam-directory (file-truename "~/org-roam"))
-
       (scroll-bar-mode -1)
       (tool-bar-mode -1)
       (tooltip-mode -1)
@@ -92,12 +96,25 @@
             delete-old-versions t
             kept-new-versions 6
             kept-old-versions 2)
-      (global-set-key (kbd "M-x") 'smex)
-      (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
       (defun load-elfeed-feeds-from-file (file)
       (global-set-key (kbd "C-x w") 'elfeed)
       (setq elfeed-feeds (load-elfeed-feeds-from-file "~/.emacs.d/feeds.txt")))
+
+      (use-package org-roam
+      :ensure t
+      :custom
+      :bind (:map org-mode-map
+            ("C-M-i" . completion-at-point))
+      (org-roam-completion-everywhere t)
+      (org-roam-directory "/home/vanishingideal/.org-roam")
+      :config
+      (org-roam-setup))
+
+      ;; using bind here fails to initialise lazy-loading
+      (global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
+      (global-set-key (kbd "C-c n f") 'org-roam-node-find)
+      (global-set-key (kbd "C-c n i") 'org-roam-node-insert)
     '';
   };
 }
