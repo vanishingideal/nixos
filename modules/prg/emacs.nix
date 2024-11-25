@@ -39,19 +39,31 @@
       (setq read-process-output-max (* 1024 1024))  ; Increase read process output
 
       ;;; Package Management
-      (setq use-package-always-ensure t)  ; Auto-install packages
+      (setq use-package-always-ensure t)   ; Auto-install packages
 
       ;;; Basic UI Settings
-      (setq inhibit-startup-message t)    ; Disable startup message
-      (scroll-bar-mode -1)                ; Disable visible scrollbar
-      (horizontal-scroll-bar-mode -1)     ; Disable horizontal scrollbar
-      (tool-bar-mode -1)                  ; Disable the toolbar
-      (tooltip-mode -1)                   ; Disable tooltips
-      (menu-bar-mode -1)                  ; Disable the menu bar
-      (set-fringe-mode '(8 . 0))          ; Set left fringe to 8 pixels
-      (show-paren-mode 1)                 ; Show matching parentheses
-      (global-display-line-numbers-mode t)  ;; Turns on line numbers for all buffers
+      (setq inhibit-startup-message t)     ; Disable startup message
+      (scroll-bar-mode -1)                 ; Disable visible scrollbar
+      (horizontal-scroll-bar-mode -1)      ; Disable horizontal scrollbar
+      (tool-bar-mode -1)                   ; Disable the toolbar
+      (tooltip-mode -1)                    ; Disable tooltips
+      (menu-bar-mode -1)                   ; Disable the menu bar
+      (set-fringe-mode '(8 . 0))           ; Set left fringe to 8 pixels
+      (show-paren-mode 1)                  ; Show matching parentheses
+      (global-display-line-numbers-mode t) ; Turns on line numbers for all buffers
       (setq display-line-numbers-type 'relative)
+      (setq ring-bell-function 'ignore)    ; Who wants audible text editors?
+
+      ;;; Fonts
+      (set-face-attribute 'default nil
+        :font "JetBrains Mono"
+        :height 90
+        :weight 'medium)
+
+      ;;; Indentation
+      (setq-default indent-tabs-mode nil)  ; use spaces, not tabs
+      (setq-default tab-width 2)           ; set tab width to 2 spaces
+      (setq-default standard-indent 2)     ; default indentation
 
       ;;; Yasnippet
       (use-package yasnippet
@@ -148,6 +160,10 @@
         (gruvbox-theme-use-bold-keywords t)
         (gruvbox-theme-use-bold-builtins t)
         (gruvbox-theme-use-italic-comments t))
+
+
+      ;;; JS-specific indentation
+      (setq js-indent-level 2)
 
       ;;; Launch envrc
       (envrc-global-mode)
