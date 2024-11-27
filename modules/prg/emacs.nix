@@ -20,6 +20,7 @@
         emmet-mode
         js2-mode
         citar
+        fzf
         elfeed
         org-roam
         emacsql
@@ -161,6 +162,21 @@
         (gruvbox-theme-use-bold-builtins t)
         (gruvbox-theme-use-italic-comments t))
 
+      ;;; FZF
+      (use-package fzf
+        :bind
+        (("C-c ff" . fzf)             ; general fuzzy find
+        ("C-c fg" . fzf-git)          ; fuzzy search in git repo
+        ("C-c fG" . fzf-git-grep)     ; git-aware grep
+        ("C-c fr" . fzf-recentf)      ; fuzzy find recent files
+        ("C-c fd" . fzf-directory))   ; directory search
+        :config
+          (setq fzf/args "-x --color bw --print-query --margin=1,0 --no-hscroll"
+          fzf/executable "fzf"
+          fzf/git-grep-args "-i --line-number %s"
+          fzf/grep-command "grep -nrH"
+          fzf/position-bottom t
+          fzf/window-height 15))
 
       ;;; JS-specific indentation
       (setq js-indent-level 2)

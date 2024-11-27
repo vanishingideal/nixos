@@ -11,6 +11,7 @@
     ./modules/prg/emacs.nix
     ./modules/prg/nixvim.nix
     ./modules/prg/kitty.nix
+    ./modules/prg/zathura.nix
     ./modules/prg/git.nix
     ./modules/env/gtk.nix
   ];
@@ -34,7 +35,6 @@
       direnv
       jujutsu
       feh
-      zathura
       obsidian
       vlc
       irssi
