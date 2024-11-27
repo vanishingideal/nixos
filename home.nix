@@ -25,6 +25,7 @@
       brave
       ranger
       fzf
+      unzip
       git-credential-manager
       bat
       tree

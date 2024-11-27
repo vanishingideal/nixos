@@ -20,6 +20,7 @@
         emmet-mode
         js2-mode
         citar
+        nov
         fzf
         elfeed
         org-roam
@@ -180,6 +181,9 @@
 
       ;;; JS-specific indentation
       (setq js-indent-level 2)
+
+      ;;; Epub reader
+      (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
       ;;; Launch envrc
       (envrc-global-mode)
