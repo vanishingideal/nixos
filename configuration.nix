@@ -209,8 +209,6 @@
   users.extraGroups.vboxusers.members = ["user-with-access-to-virtualbox"];
 
   fonts.packages = with pkgs; [
-    fira-code
-    fira-code-symbols
     cascadia-code
   ];
 }

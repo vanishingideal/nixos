@@ -59,7 +59,7 @@
       ;;; Fonts
       (set-face-attribute 'default nil
         :font "JetBrains Mono"
-        :height 90
+        :height 100
         :weight 'medium)
 
       ;;; Indentation
