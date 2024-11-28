@@ -60,21 +60,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-    fish = {
-      enable = true;
-      shellInit = ''
-        if status --is-interactive
-          eval (direnv hook fish)
-        end
-        flox activate -d $HOME | source
-      '';
-      interactiveShellInit = ''
-        set -gx --path fish_function_path "/etc/nixos/modules/prg/fish" $fish_function_path
-        source "/etc/nixos/modules/prg/fish/prompt.fish"
-        theme_gruvbox dark
-        set -gx DIRENV_LOG_FORMAT ""
-      '';
-    };
   };
   nix = {
     extraOptions = ''
@@ -162,7 +147,7 @@
 
   users.users.vanishingideal = {
     isNormalUser = true;
-    shell = pkgs.fish;
+    shell = pkgs.nushell;
     description = "vanishingideal";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [];
@@ -178,15 +163,6 @@
       bluez-tools
       bluez-alsa
     ];
-    shellAliases = {
-      rebuild = "cd /etc/nixos && sudo nixos-rebuild switch --flake .#default";
-      gc = "nh clean all";
-      e = "emacsclient -t";
-      cc = "gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -g $1 -o $(echo $1 | cut -d . -f1)";
-      yt = "yt-dlp --cookies-from-browser firefox -f ba -x";
-      pbcopy = "xclip -selection clipboard";
-      pbpaste = "xclip -selection clipboard -o";
-    };
     variables = {
       BROWSER = "firefox";
     };

@@ -26,6 +26,8 @@
       ranger
       nushell
       fzf
+      libvirt
+      virt-manager
       unzip
       git-credential-manager
       bat
@@ -37,7 +39,6 @@
       direnv
       jujutsu
       feh
-      obsidian
       vlc
       irssi
       lmstudio
@@ -56,6 +57,7 @@
       ncmpcpp
     ];
   };
+
   services.xscreensaver = {
     enable = true;
     settings = {
