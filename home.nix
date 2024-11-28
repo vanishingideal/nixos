@@ -24,6 +24,7 @@
       firefox
       brave
       ranger
+      nushell
       fzf
       unzip
       git-credential-manager
@@ -40,7 +41,7 @@
       vlc
       irssi
       lmstudio
-      dmenu
+      rofi
       gron
       ripgrep
       git-crypt
