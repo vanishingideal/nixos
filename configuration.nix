@@ -170,6 +170,10 @@
 
   nixpkgs.config.allowUnfree = true;
   virtualisation = {
+    libvirtd = {
+      enable = true;
+      package = pkgs.libvirt;
+    };
     virtualbox = {
       host = {
         enable = true;

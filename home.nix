@@ -25,8 +25,8 @@
       brave
       ranger
       nushell
+      vivid
       fzf
-      libvirt
       virt-manager
       unzip
       git-credential-manager
