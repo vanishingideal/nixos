@@ -47,10 +47,12 @@
   };
 
   programs = {
+    virt-manager.enable = true;
     nh = {
       enable = true;
       flake = "/etc/nixos";
     };
+
     dconf.enable = true;
     appimage = {
       enable = true;
@@ -149,7 +151,7 @@
     isNormalUser = true;
     shell = pkgs.nushell;
     description = "vanishingideal";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["libvirtd" "networkmanager" "wheel" "docker"];
     packages = with pkgs; [];
   };
 
@@ -170,6 +172,10 @@
 
   nixpkgs.config.allowUnfree = true;
   virtualisation = {
+    docker.rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
     libvirtd = {
       enable = true;
       package = pkgs.libvirt;

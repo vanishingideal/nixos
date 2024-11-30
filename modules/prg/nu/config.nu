@@ -16,6 +16,10 @@ $env.config = {
   }
 }
 
+$env.LS_COLORS = (vivid generate gruvbox-dark-hard | str trim)
+$env.PROMPT_COMMAND_RIGHT = ""
+$env.PROMPT_MULTILINE_INDICATOR = ""
+
 def create_left_prompt [] {
     let last_exit = $env.LAST_EXIT_CODE
     let prompt_char = ";"
@@ -56,7 +60,6 @@ def pbcopy [] {
 def pbpaste [] {
     xclip -selection clipboard -o
 }
-
 $env.PROMPT_COMMAND = { || create_left_prompt }
 $env.PROMPT_INDICATOR = " "
 
