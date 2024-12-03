@@ -28,6 +28,8 @@
       set -g renumber-windows on
       set -g status-style bg=default
 
+      set-environment -g DISPLAY :0
+
       set -g status-left-length 32
       set -g status-right-length 0
 
