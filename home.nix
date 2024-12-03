@@ -35,7 +35,6 @@
       jetbrains-mono
       xclip
       btop
-      direnv
       jujutsu
       feh
       vlc
