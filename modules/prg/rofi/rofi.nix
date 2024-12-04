@@ -1,10 +1,6 @@
 {pkgs, ...}: {
   programs.rofi = {
     enable = true;
-    theme = ./config.rasi;
-
-    extraConfig = {
-      drun-display-format = "{name}";
-    };
+    theme = "/etc/nixos/modules/prg/rofi/config.rasi";
   };
 }

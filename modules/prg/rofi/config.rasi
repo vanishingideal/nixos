@@ -44,3 +44,6 @@
     selected-urgent-background:  @gruvbox-dark-red-light;
     selected-urgent-foreground:  @urgent-foreground;
 }
+
+@import "gruvbox-common.rasi"
+
