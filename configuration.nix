@@ -172,6 +172,9 @@
 
   nixpkgs.config.allowUnfree = true;
   virtualisation = {
+    podman = {
+      enable = true;
+    };
     docker.rootless = {
       enable = true;
       setSocketVariable = true;

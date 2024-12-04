@@ -9,6 +9,7 @@
     ./modules/prg/tmux.nix
     ./modules/prg/direnv.nix
     ./modules/prg/emacs.nix
+    ./modules/prg/rofi/rofi.nix
     ./modules/prg/nixvim.nix
     ./modules/prg/kitty.nix
     ./modules/prg/zathura.nix
@@ -30,6 +31,8 @@
       unzip
       git-credential-manager
       bat
+      lazydocker
+      radicle-node
       tree
       tmux
       jetbrains-mono
