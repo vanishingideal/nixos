@@ -50,6 +50,7 @@
 
       ;;; Basic UI Settings
       (setq inhibit-startup-message t)     ; Disable startup message
+      (setq inhibit-startup-screen t)      ;
       (scroll-bar-mode -1)                 ; Disable visible scrollbar
       (horizontal-scroll-bar-mode -1)      ; Disable horizontal scrollbar
       (tool-bar-mode -1)                   ; Disable the toolbar
@@ -60,10 +61,15 @@
       (global-display-line-numbers-mode t) ; Turns on line numbers for all buffers
       (setq display-line-numbers-type 'relative)
       (setq ring-bell-function 'ignore)    ; Who wants audible text editors?
+      (setq-default truncate-lines t)      ; Prevent soft wrapping
+      (setq-default fill-column 79)
+      (setq-default auto-fill-mode t)
 
       ;;; Fonts
-      (add-to-list 'default-frame-alist '(font . "JetBrains Mono-9"))
-      (add-to-list 'default-frame-alist '(line-spacing . 0.2))
+      (set-face-attribute 'default nil :font "JetBrains Mono" :height 105)
+      (setq face-font-rescale-alist '((".*" . 1.0)))
+      (setq-default antialiasing nil)
+
 
       ;;; Indentation
       (setq-default indent-tabs-mode nil)  ; use spaces, not tabs
@@ -137,9 +143,10 @@
         (setq elfeed-feeds (load-elfeed-feeds-from-file "~/.emacs.d/feeds.txt")))
 
       ;;; Org-journal
+      (require 'org-journal)
       (setq org-journal-dir "~/org/journal/")
       (setq org-journal-date-format "%A, %d %B %Y")
-      (require 'org-journal)
+      (global-set-key (kbd "C-c C-j") 'org-journal-new-entry)
 
       ;;; Org-roam Configuration
       (use-package org-roam
