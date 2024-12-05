@@ -151,7 +151,7 @@
     isNormalUser = true;
     shell = pkgs.nushell;
     description = "vanishingideal";
-    extraGroups = ["libvirtd" "networkmanager" "wheel" "docker"];
+    extraGroups = ["libvirtd" "networkmanager" "wheel"];
     packages = with pkgs; [];
   };
 
@@ -164,6 +164,10 @@
       bluez
       bluez-tools
       bluez-alsa
+
+      dive
+      podman-tui
+      podman-compose
     ];
     variables = {
       BROWSER = "firefox";
@@ -174,6 +178,8 @@
   virtualisation = {
     podman = {
       enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
     };
     docker.rootless = {
       enable = true;

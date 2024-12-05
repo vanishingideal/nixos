@@ -31,7 +31,7 @@
       unzip
       git-credential-manager
       bat
-      lazydocker
+      podman-desktop
       radicle-node
       tree
       tmux

@@ -13,6 +13,7 @@
         evil
         lsp-mode
         lsp-ui
+        org-bullets
         gruvbox-theme
         yasnippet
         envrc
@@ -43,6 +44,10 @@
       ;;; Package Management
       (setq use-package-always-ensure t)   ; Auto-install packages
 
+      ;;; Org-bullets
+      (require 'org-bullets)
+      (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
       ;;; Basic UI Settings
       (setq inhibit-startup-message t)     ; Disable startup message
       (scroll-bar-mode -1)                 ; Disable visible scrollbar
@@ -57,10 +62,8 @@
       (setq ring-bell-function 'ignore)    ; Who wants audible text editors?
 
       ;;; Fonts
-      (set-face-attribute 'default nil
-        :font "JetBrains Mono"
-        :height 100
-        :weight 'medium)
+      (add-to-list 'default-frame-alist '(font . "JetBrains Mono-9"))
+      (add-to-list 'default-frame-alist '(line-spacing . 0.2))
 
       ;;; Indentation
       (setq-default indent-tabs-mode nil)  ; use spaces, not tabs
