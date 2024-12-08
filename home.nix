@@ -23,6 +23,7 @@
     packages = with pkgs; [
       newsboat
       firefox
+      telegram-desktop
       brave
       ranger
       nushell
