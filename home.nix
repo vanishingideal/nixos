@@ -27,6 +27,7 @@
       brave
       ranger
       nushell
+      openssl
       vivid
       fzf
       unzip

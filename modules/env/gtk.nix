@@ -11,8 +11,7 @@
     };
 
     font = {
-      name = "Noto Sans 8";
-      package = pkgs.noto-fonts;
+      name = "JetBrains Mono NL Bold 10";
     };
 
     iconTheme = {

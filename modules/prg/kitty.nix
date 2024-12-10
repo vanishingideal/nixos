@@ -10,6 +10,7 @@
       size = 9;
     };
     extraConfig = ''
+      shell nu
       mouse_hide_wait 0.25
       confirm_os_window_close 0
       copy_on_select yes
@@ -18,6 +19,7 @@
       copy_on_select yes
       show_hyperlink_targets yes
       open_url_with firefox
+      enable_audio_bell no
 
       cursor_shape underline
       disable_ligatures never

@@ -23,6 +23,14 @@ $env.LS_COLORS = (vivid generate gruvbox-dark-hard | str trim)
 $env.PROMPT_COMMAND_RIGHT = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
 
+def encrypt [input_file: string, output_file: string, password: string] {
+    ^openssl aes-256-cbc -pbkdf2 -salt -in $input_file -out $output_file -pass $"pass:($password)"
+}
+
+def decrypt [input_file: string, output_file: string, password: string] {
+    ^openssl aes-256-cbc -pbkdf2 -salt -d -in $input_file -out $output_file -pass $"pass:($password)"
+}
+
 def create_left_prompt [] {
     let last_exit = $env.LAST_EXIT_CODE
     let prompt_char = ";"
