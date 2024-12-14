@@ -8,7 +8,7 @@
 }: {
   imports = [./hardware-configuration.nix];
 
-  system.stateVersion = "24.05";
+ system.stateVersion = "24.05";
 
   boot = {
     loader = {
@@ -109,6 +109,12 @@
     };
     libinput.enable = true;
     openssh.enable = true;
+
+    tlp.settings = {
+      WIFI_PWR_ON_AC = "off";
+      WIFI_PWR_ON_BAT = "off";
+      USB_AUTOSUSPEND = "0";
+    };
 
     mpd = {
       enable = true;
