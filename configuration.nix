@@ -8,7 +8,7 @@
 }: {
   imports = [./hardware-configuration.nix];
 
- system.stateVersion = "24.05";
+  system.stateVersion = "24.05";
 
   boot = {
     loader = {
@@ -79,8 +79,14 @@
   i18n.defaultLocale = "en_US.UTF-8";
 
   services = {
-    displayManager.sddm.enable = true;
-    displayManager.defaultSession = "none+dwm";
+    displayManager = {
+      sddm = {
+        enable = true;
+        theme = "catppuccin-mocha";
+        package = pkgs.kdePackages.sddm;
+      };
+      defaultSession = "none+dwm";
+    };
     xserver = {
       enable = true;
       windowManager.dwm = {
@@ -134,6 +140,9 @@
     XDG_RUNTIME_DIR = "/run/user/1000";
   };
   hardware = {
+    graphics = {
+      enable = true;
+    };
     pulseaudio.enable = false;
     bluetooth = {
       enable = true;
@@ -152,6 +161,7 @@
   };
 
   security.rtkit.enable = true;
+  security.polkit.enable = true;
 
   users.users.vanishingideal = {
     isNormalUser = true;
@@ -167,13 +177,22 @@
       nil
       nix-tree
       nix-output-monitor
+      
       bluez
       bluez-tools
       bluez-alsa
-
+      
       dive
+      
       podman-tui
       podman-compose
+      
+      (catppuccin-sddm.override {
+        flavor = "mocha";
+        font = "lexend";
+        fontSize = "9";
+        loginBackground = true;
+      })
     ];
     variables = {
       BROWSER = "firefox";

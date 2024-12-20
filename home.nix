@@ -26,6 +26,7 @@
       telegram-desktop
       brave
       ranger
+      borgbackup
       nushell
       openssl
       vivid
