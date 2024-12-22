@@ -139,6 +139,7 @@
     # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
     XDG_RUNTIME_DIR = "/run/user/1000";
   };
+
   hardware = {
     graphics = {
       enable = true;
@@ -177,19 +178,19 @@
       nil
       nix-tree
       nix-output-monitor
-      
+
       bluez
       bluez-tools
       bluez-alsa
-      
+
       dive
-      
+
       podman-tui
       podman-compose
-      
+
       (catppuccin-sddm.override {
         flavor = "mocha";
-        font = "lexend";
+        font = "Jetbrains Mono";
         fontSize = "9";
         loginBackground = true;
       })
