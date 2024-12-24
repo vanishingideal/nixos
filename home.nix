@@ -23,13 +23,13 @@
     packages = with pkgs; [
       newsboat
       firefox
-      telegram-desktop
       brave
       ranger
       borgbackup
       nushell
       openssl
       vivid
+      tealdeer
       fzf
       unzip
       git-credential-manager

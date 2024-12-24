@@ -73,4 +73,4 @@ def pbpaste [] {
 }
 $env.PROMPT_COMMAND = { || create_left_prompt }
 $env.PROMPT_INDICATOR = " "
-
+$env.MANPAGER = "nvim +Man!"

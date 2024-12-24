@@ -20,7 +20,6 @@
       show_hyperlink_targets yes
       open_url_with firefox
       enable_audio_bell no
-
       cursor_shape underline
       disable_ligatures never
       tab_bar_style powerline
