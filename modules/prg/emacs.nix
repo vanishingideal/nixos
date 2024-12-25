@@ -44,7 +44,7 @@
 	;;; Package Management
 	(setq use-package-always-ensure t)   ; Auto-install packages
 	
-	;; idk
+	;; Seems to disable strict signature checking against melpa (for nixos)
 	(setq package-check-signature nil)
 	
 	;;; Org-bullets
