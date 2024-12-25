@@ -12,7 +12,6 @@
         use-package
         evil
         org-bullets
-        gruvbox-theme
         yasnippet
         envrc
         org-journal
@@ -26,22 +25,28 @@
         emacsql
         emacsql-sqlite
         pdf-tools
-        vertico-posframe
         vterm
         nix-mode
         neotree
         multiple-cursors
         company
-      ];
+    ];
 
     extraConfig = ''
+	(require 'package)
+	(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+	(package-initialize)
+
 	;;; Basic Performance Tweaks
 	(setq gc-cons-threshold 100000000)            ; Increase garbage collection threshold
 	(setq read-process-output-max (* 1024 1024))  ; Increase read process output
 
 	;;; Package Management
 	(setq use-package-always-ensure t)   ; Auto-install packages
-
+	
+	;; idk
+	(setq package-check-signature nil)
+	
 	;;; Org-bullets
 	(require 'org-bullets)
 	(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
@@ -49,6 +54,16 @@
 	(use-package flycheck
 	:ensure t
 	:init (global-flycheck-mode))
+
+	;; Theming (ugly hack)
+	(unless (package-installed-p 'miasma-theme)
+	  (package-refresh-contents)
+	  (package-install 'miasma-theme))
+
+	(use-package miasma-theme
+	  :ensure t
+	  :config
+	  (load-theme 'miasma t))
 
 	;;; Basic UI Settings
 	(setq inhibit-startup-message t)     ; Disable startup message
@@ -144,15 +159,6 @@
 	(global-set-key (kbd "C-c n l") 'org-roam-buffer-toggle)
 	(global-set-key (kbd "C-c n f") 'org-roam-node-find)
 	(global-set-key (kbd "C-c n i") 'org-roam-node-insert)
-
-	;;; Theme Configuration
-	(use-package gruvbox-theme
-	:config
-	(load-theme 'gruvbox-dark-hard t)
-	:custom
-	(gruvbox-theme-use-bold-keywords t)
-	(gruvbox-theme-use-bold-builtins t)
-	(gruvbox-theme-use-italic-comments t))
 
 	;;; FZF
 	(use-package fzf

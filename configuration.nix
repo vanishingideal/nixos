@@ -187,6 +187,7 @@
 
       podman-tui
       podman-compose
+      xorg.xhost
 
       (catppuccin-sddm.override {
         flavor = "mocha";
@@ -197,6 +198,7 @@
     ];
     variables = {
       BROWSER = "firefox";
+      XAUTHORITY = "/home/vanishingideal/.Xauthority";
     };
   };
 
