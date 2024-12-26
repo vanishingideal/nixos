@@ -1,8 +1,13 @@
-{...}: {
+{
+  pkgs,
+  ...
+}: {
   programs.nixvim = {
     enable = true;
     viAlias = true;
-    colorschemes.gruvbox.enable = true;
+    extraPlugins = [ pkgs.vimPlugins.miasma-nvim ];
+    colorscheme = "miasma";
+
     opts = {
       number = true;
       relativenumber = true;
