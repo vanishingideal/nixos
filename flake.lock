@@ -24,17 +24,17 @@
     "dwm": {
       "flake": false,
       "locked": {
-        "lastModified": 1735181262,
-        "narHash": "sha256-8cGE0CC/tgktCAqKE+Ya75QVQ+TNGFETyTRVACcxtNI=",
+        "lastModified": 1735234128,
+        "narHash": "sha256-7skPfJW071y0Oi0AhpK3yofkT4Y8TODACL2XRrY3uSw=",
         "owner": "vanishingideal",
         "repo": "dwm",
-        "rev": "8e3e4508ba7ea9f02c39156509ab90d8a1a4d3c4",
+        "rev": "b179742be526b03b46d1e8dafdc314731153b50c",
         "type": "github"
       },
       "original": {
         "owner": "vanishingideal",
         "repo": "dwm",
-        "rev": "8e3e4508ba7ea9f02c39156509ab90d8a1a4d3c4",
+        "rev": "b179742be526b03b46d1e8dafdc314731153b50c",
         "type": "github"
       }
     },

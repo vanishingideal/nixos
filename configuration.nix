@@ -76,8 +76,16 @@
 
   time.timeZone = "Europe/Monaco";
 
-  i18n.defaultLocale = "en_US.UTF-8";
-
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [
+  "en_US.UTF-8/UTF-8"
+];
+    extraLocaleSettings = {
+      LC_ALL = "en_US.UTF-8";
+    }; 
+  };
+  
   services = {
     displayManager = {
       sddm = {
@@ -198,7 +206,7 @@
     ];
     variables = {
       BROWSER = "firefox";
-      XAUTHORITY = "/home/vanishingideal/.Xauthority";
+     
     };
   };
 
