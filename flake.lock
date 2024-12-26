@@ -24,17 +24,17 @@
     "dwm": {
       "flake": false,
       "locked": {
-        "lastModified": 1732826625,
+        "lastModified": 1735181262,
         "narHash": "sha256-8cGE0CC/tgktCAqKE+Ya75QVQ+TNGFETyTRVACcxtNI=",
         "owner": "vanishingideal",
         "repo": "dwm",
-        "rev": "099b5b55c8d90ebae2c89fb12a895dcd060f9827",
+        "rev": "8e3e4508ba7ea9f02c39156509ab90d8a1a4d3c4",
         "type": "github"
       },
       "original": {
         "owner": "vanishingideal",
         "repo": "dwm",
-        "rev": "099b5b55c8d90ebae2c89fb12a895dcd060f9827",
+        "rev": "8e3e4508ba7ea9f02c39156509ab90d8a1a4d3c4",
         "type": "github"
       }
     },
@@ -280,11 +280,11 @@
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
-        "lastModified": 1735124172,
-        "narHash": "sha256-2X2yCslRVWAmD/2IuiGGRJxEX+CMM7uuI81VZz+WJMU=",
+        "lastModified": 1735169833,
+        "narHash": "sha256-Wu201kM5vgOUhhwkKuYSZmmTMflgBybqeEIzIH4MRY4=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "ca3c7e29a857084c4b311aa714b88ab789760fe0",
+        "rev": "25c13524642cb7fe98583a5dd5f90992c76198b9",
         "type": "github"
       },
       "original": {

@@ -9,7 +9,7 @@
     package = pkgs.emacs30;
 
     extraPackages = epkgs:
-      with epkgs; [
+      with epkgs.melpaPackages; [
         use-package
         evil
         org-bullets
