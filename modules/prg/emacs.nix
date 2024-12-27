@@ -31,7 +31,7 @@
         neotree
         multiple-cursors
         company
-    ];
+      ];
 
     extraConfig = ''
       (load "/etc/nixos/modules/prg/emacs/init.el")

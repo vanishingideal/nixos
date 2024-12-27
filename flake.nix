@@ -16,6 +16,9 @@
       url = "github:vanishingideal/dwm/b179742be526b03b46d1e8dafdc314731153b50c";
       flake = false;
     };
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+    };
   };
 
   outputs = {
@@ -25,6 +28,7 @@
     nixos-hardware,
     home-manager,
     dwm,
+    ghostty,
     ...
   } @ inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
@@ -35,6 +39,11 @@
 
       #extraSpecialArgs = { inherit inputs; };
       modules = [
+        {
+          environment.systemPackages = [
+            ghostty.packages.x86_64-linux.default
+          ];
+        }
         ./configuration.nix
         inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
         inputs.nixos-hardware.nixosModules.common-pc-laptop

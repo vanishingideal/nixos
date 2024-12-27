@@ -48,6 +48,7 @@
 
   programs = {
     virt-manager.enable = true;
+    steam.enable = true;
     nh = {
       enable = true;
       flake = "/etc/nixos";
@@ -79,13 +80,13 @@
   i18n = {
     defaultLocale = "en_US.UTF-8";
     supportedLocales = [
-  "en_US.UTF-8/UTF-8"
-];
+      "en_US.UTF-8/UTF-8"
+    ];
     extraLocaleSettings = {
       LC_ALL = "en_US.UTF-8";
-    }; 
+    };
   };
-  
+
   services = {
     displayManager = {
       sddm = {
@@ -186,7 +187,6 @@
       nil
       nix-tree
       nix-output-monitor
-
       bluez
       bluez-tools
       bluez-alsa
@@ -206,7 +206,6 @@
     ];
     variables = {
       BROWSER = "firefox";
-     
     };
   };
 

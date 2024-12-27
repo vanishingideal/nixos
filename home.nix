@@ -30,6 +30,7 @@
       openssl
       vivid
       tealdeer
+      vesktop
       fzf
       unzip
       git-credential-manager
