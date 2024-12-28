@@ -1,9 +1,3 @@
-if ($env.DISPLAY == null) {
-  if ($env.TTY == "/dev/tty1") {
-    exec /nix/store/kqkvzlirxm5aspgp1m3yvi93c35ilmq5-dwl-0.7/bin/dwl
-  }
-}
-
 source "./gruvbox-dark-hard.nu"
 
 $env.config = {

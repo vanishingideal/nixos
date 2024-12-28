@@ -9,7 +9,7 @@
     package = pkgs.emacs30;
 
     extraPackages = epkgs:
-      with epkgs.melpaPackages; [
+      with epkgs; [
         use-package
         evil
         org-bullets
@@ -24,7 +24,6 @@
         flycheck
         org-roam
         emacsql
-        emacsql-sqlite
         pdf-tools
         vterm
         nix-mode

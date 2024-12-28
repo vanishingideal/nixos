@@ -18,27 +18,22 @@
 ;;; Package Configurations
 (use-package flycheck
   :ensure t
-  :defer t
   :init (global-flycheck-mode))
 
 (use-package yasnippet
-  :defer t
   :ensure t
   :config (yas-global-mode 1))
 
 (use-package company
-  :defer t
   :hook (prog-mode . company-mode)
   :config
   (setq company-minimum-prefix-length 1
         company-idle-delay 0.0))
 
 (use-package evil
-  :defer t
   :config (evil-mode 1))
 
 (use-package emmet-mode
-  :defer t
   :config
   (define-key emmet-mode-keymap (kbd "TAB") 'emmet-expand-line)
   (setq emmet-indentation 2
@@ -46,7 +41,6 @@
   (add-to-list 'emmet-jsx-major-modes 'js-mode))
 
 (use-package js2-mode
-  :defer t
   :ensure t
   :mode "\\.js\\'"
   :hook ((js2-mode . yas-minor-mode)
@@ -54,20 +48,19 @@
          (js2-mode . flycheck-mode)))
 
 (use-package lean4-mode
-  :defer t
   :commands (lean4-mode))
 
 (use-package org-roam
-  :defer t
   :ensure t
   :custom
   (org-roam-completion-everywhere t)
   (org-roam-directory "/home/vanishingideal/.org-roam")
-  :bind (:map org-mode-map ("C-M-i" . completion-at-point))
-  :config (org-roam-setup))
+  :bind (("C-c n f" . org-roam-node-find)) ;; bind globally for testing
+  :config
+  (org-roam-setup))
+
 
 (use-package fzf
-  :defer t
   :bind
   (("C-c ff" . fzf)             ; general fuzzy find
    ("C-c fg" . fzf-git)          ; fuzzy search in git repo
