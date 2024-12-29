@@ -21,6 +21,12 @@ $env.LS_COLORS = (vivid generate gruvbox-dark-hard | str trim)
 $env.PROMPT_COMMAND_RIGHT = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
 
+let fish_completer = {|spans|
+    fish --command $'complete "--do-complete=($spans | str join " ")"'
+    | from tsv --flexible --noheaders --no-infer
+    | rename value description
+}
+
 def encrypt [input_file: string, output_file: string, password: string] {
     ^openssl aes-256-cbc -pbkdf2 -salt -in $input_file -out $output_file -pass $"pass:($password)"
 }
