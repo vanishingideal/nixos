@@ -144,9 +144,11 @@
       startWhenNeeded = true;
     };
   };
-  systemd.services.mpd.environment = {
-    # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
-    XDG_RUNTIME_DIR = "/run/user/1000";
+  systemd.services = {
+    mpd.environment = {
+      # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/609
+      XDG_RUNTIME_DIR = "/run/user/1000";
+    };
   };
 
   hardware = {
@@ -207,6 +209,15 @@
     variables = {
       BROWSER = "firefox";
     };
+
+    shellInit = ''
+      if [ ! -f "$HOME/.Xauthority" ]; then
+	xauth generate :0 . trusted
+	touch "$HOME/.Xauthority"
+	chmod 600 "$HOME/.Xauthority"
+      fi
+    '';
+
   };
 
   nixpkgs.config.allowUnfree = true;
