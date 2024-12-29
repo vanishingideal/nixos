@@ -13,7 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     dwm = {
-      url = "github:vanishingideal/dwm/d79962e956e7fe94b56fa1342b7d993eb6f68ec4";
+      url = "github:vanishingideal/dwm/896cfd534ba7d40510f24b4b4708f43deafb455e";
       flake = false;
     };
     ghostty = {
