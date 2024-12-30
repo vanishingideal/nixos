@@ -39,8 +39,8 @@
       set -g window-status-format "#[fg=white]#I#[fg=white]·#[fg=white]#W#[fg=white]"
       set -g window-status-current-format "#[fg=white]#I#[fg=white]·#[fg=white]#W#[fg=white]"
 
-      set -g pane-border-style fg=color235
-      set -g pane-active-border-style "bg=color000 fg=color235"
+      set -g pane-border-style fg=color000
+      set -g pane-active-border-style "fg=color000"
 
       set-option -g detach-on-destroy off
       set-environment -g DISPLAY :0
