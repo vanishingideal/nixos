@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./modules/prg/tmux.nix
+    ./modules/prg/ranger.nix
     ./modules/prg/direnv.nix
     ./modules/prg/emacs.nix
     ./modules/prg/rofi/rofi.nix
