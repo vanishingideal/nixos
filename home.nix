@@ -27,7 +27,9 @@
       ranger
       borgbackup
       nushell
+      ccze
       openssl
+      imhex
       vivid
       tealdeer
       vesktop

@@ -28,8 +28,6 @@
       set -g renumber-windows on
       set -g status-style bg=default
 
-      set -g update-environment "DISPLAY"
-      set-environment -g XAUTHORITY "$HOME/.Xauthority"
       set -g status-left-length 32
       set -g status-right-length 0
 

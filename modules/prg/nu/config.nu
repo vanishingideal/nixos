@@ -17,14 +17,21 @@ $env.config = {
   }
 }
 
+
+let fish_completer = {|spans|
+  fish --command $'complete "--do-complete=($spans | str join " ")"'
+  | from tsv --flexible --noheaders --no-infer
+  | rename value description
+}
+
 $env.LS_COLORS = (vivid generate gruvbox-dark-hard | str trim)
 $env.PROMPT_COMMAND_RIGHT = ""
 $env.PROMPT_MULTILINE_INDICATOR = ""
-
-let fish_completer = {|spans|
-    fish --command $'complete "--do-complete=($spans | str join " ")"'
-    | from tsv --flexible --noheaders --no-infer
-    | rename value description
+$env.ENV_CONVERSIONS = {
+    PATH: {
+        from_string: { |s| $s | split row ':' },
+        to_string: { |v| $v | str join ':' }
+    }
 }
 
 def encrypt [input_file: string, output_file: string, password: string] {

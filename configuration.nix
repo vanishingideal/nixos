@@ -88,6 +88,7 @@
   };
 
   services = {
+    dbus.enable = true;
     displayManager = {
       sddm = {
         enable = true;
@@ -193,6 +194,9 @@
       bluez-tools
       bluez-alsa
 
+      xdg-desktop-portal
+      xdg-desktop-portal-gtk
+
       dive
 
       podman-tui
@@ -211,13 +215,12 @@
     };
 
     shellInit = ''
-      if [ ! -f "$HOME/.Xauthority" ]; then
-	xauth generate :0 . trusted
-	touch "$HOME/.Xauthority"
-	chmod 600 "$HOME/.Xauthority"
-      fi
+    	if [ ! -f "$HOME/.Xauthority" ]; then
+	  xauth generate :0 . trusted
+	  touch "$HOME/.Xauthority"
+	  chmod 600 "$HOME/.Xauthority"
+        fi
     '';
-
   };
 
   nixpkgs.config.allowUnfree = true;
