@@ -93,9 +93,9 @@
 (setq-default auto-fill-mode t)
 
 ;;; Fonts
-(set-face-attribute 'default nil :font "JetBrains Mono" :height 105)
-(setq face-font-rescale-alist '((".*" . 1.0)))
-(setq-default antialiasing nil)
+(set-face-attribute 'default nil :font "JetBrains Mono-10")
+(setq-default antialiasing t)
+(setq frame-resize-pixelwise t)
 
 ;;; Indentation
 (setq-default indent-tabs-mode nil)
