@@ -215,11 +215,11 @@
     };
 
     shellInit = ''
-    if [ ! -f "$HOME/.Xauthority" ]; then
-      xauth generate :0 . trusted
-      touch "$HOME/.Xauthority"
-      chmod 600 "$HOME/.Xauthority"
-    fi
+      if [ ! -f "$HOME/.Xauthority" ]; then
+        xauth generate :0 . trusted
+        touch "$HOME/.Xauthority"
+        chmod 600 "$HOME/.Xauthority"
+      fi
     '';
   };
 
@@ -240,7 +240,18 @@
     };
   };
 
-  fonts.packages = with pkgs; [
-    cascadia-code
-  ];
+  fonts = {
+    fontconfig = {
+      antialias = true;
+      hinting = {
+        enable = true;
+        style = "slight";
+        autohint = true;
+      };
+      subpixel = {
+        rgba = "rgb";
+        lcdfilter = "default";
+      };
+    };
+  };
 }

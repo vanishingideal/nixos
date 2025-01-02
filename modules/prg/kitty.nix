@@ -23,7 +23,7 @@
       cursor_shape underline
       disable_ligatures never
       tab_bar_style powerline
-
+      font_hinting none
       include /etc/nixos/modules/prg/kitty/gruvbox_dark.conf
     '';
   };

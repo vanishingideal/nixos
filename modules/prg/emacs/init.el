@@ -93,7 +93,7 @@
 (setq-default auto-fill-mode t)
 
 ;;; Fonts
-(set-face-attribute 'default nil :font "JetBrains Mono-10")
+(set-face-attribute 'default nil :font "JetBrains Mono-9")
 (setq-default antialiasing t)
 (setq frame-resize-pixelwise t)
 
